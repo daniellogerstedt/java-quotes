@@ -10,22 +10,11 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class App {
 
-    public static int main(String[] args) {
+    public static void main(String[] args) {
         Quote[] quotes = quoteArr();
         int random = ThreadLocalRandom.current().nextInt(quotes.length);
         System.out.println(quotes[random]);
-        return random;
-//        try {
-//            byte[] text = Files.readAllBytes(Paths.get("assets/recentquotes.json"));
-//            Gson gson = new Gson();
-//            Quote[] quotes = gson.fromJson(new String(text), Quote[].class);
-//            int random = ThreadLocalRandom.current().nextInt(quotes.length);
-//            System.out.println(random);
-//
-//        }
-//        catch (IOException e) {
-//            System.err.println(e);
-//        }
+
     }
 
     public static Quote[] quoteArr () {
