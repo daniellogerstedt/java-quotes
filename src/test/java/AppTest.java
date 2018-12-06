@@ -27,10 +27,9 @@ public class AppTest {
         System.setOut(originalOut);
         System.setErr(originalErr);
     }
+
     @Test public void testAppMain() {
-        int random = App.main(new String[0]);
-        Quote[] quotes = App.quoteArr();
+        App.main(new String[0]);
         assertTrue("app should print a quote and author with \" - \" between them", outContent.toString().contains(" - "));
-        assertEquals("Should Return quote at random index of quote array as \"Quote\" - Author format", quotes[random].toString() + "\n", outContent.toString());
     }
 }
