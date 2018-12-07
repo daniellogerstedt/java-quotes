@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 
 public class FileManager {
 
-    public static String path = "assets/swansonQuotes.json";
+    public static String path = "assets/recentquotes.json";
 
     public static void writeLocalQuotes (Quote[] quotes) {
 
