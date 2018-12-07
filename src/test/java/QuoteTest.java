@@ -23,4 +23,16 @@ public class QuoteTest {
         Quote quote3 = new Quote(new String[0], "TestAuthor", "\"Test/Text\"", "No One Likes This");
         assertEquals("should return \"quote\" - author", "\"Test/Text\" - TestAuthor", quote3.toString());
     }
+
+    @Test
+    public void testAddNewQuote() {
+        Quote[] testArr = new Quote[0];
+        Quote testQuote = new Quote(new String[0], "Test Author", "Test Text", "Test Likes");
+        Quote[] newArr = Quote.addNewQuote(testArr, testQuote);
+        assertEquals("Should give an array of 1 longer if quote is unique", testArr.length + 1, newArr.length);
+        Quote[] newArrTwo = Quote.addNewQuote(newArr, testQuote);
+        assertEquals("Should give an array of same length if quote is not unique", newArr.length, newArrTwo.length);
+        assertEquals("Should simply return array given if quote is not unique", newArr.toString(), newArrTwo.toString());
+
+    }
 }
